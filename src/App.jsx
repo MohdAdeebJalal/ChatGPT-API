@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import React from "react";
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import {MainContainer,ChatContainer,Message,MessageList,TypingIndicator,MessageInput} from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "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";
 
+const apiKey = "Your API Key";
 function App() {
+  
+  // console.log(process.env);
   const [typing,setTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -56,7 +59,7 @@ function App() {
   await fetch("https://api.openai.com/v1/chat/completions",{
     method : "POST",
     headers : {
-      "Authorization":"Bearer "+ API_KEY,
+      "Authorization":"Bearer "+ apiKey,
       "Content-Type" : "application/json",
     },
     body : JSON.stringify(apiRequestBody),
@@ -77,8 +80,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div style={{ position: "relative",height:"800px",width:"700px"}}>
+    <div className="App" style={{ backgroundColor: "gray" }}>
+      <div style={{height:"100vh",width:"100vh", marginLeft: "600px", }}>
+      {/* <div className=' relative h-[800px] w-[700px]'> */}
       
         <MainContainer>
           <ChatContainer>
