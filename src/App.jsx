@@ -42,7 +42,7 @@ function App() {
 
   const systemMessge ={
     role : "system",
-    content : "Explain all concepts like I am  a ChatGPT."
+    content : "Explain all concepts  ChatGPT."
   }
 
   const apiRequestBody = {
@@ -79,6 +79,7 @@ function App() {
   return (
     <div className="App">
       <div style={{ position: "relative",height:"800px",width:"700px"}}>
+      
         <MainContainer>
           <ChatContainer>
             <MessageList 
